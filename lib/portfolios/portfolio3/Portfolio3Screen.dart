@@ -4,16 +4,8 @@ import 'package:nb_utils/nb_utils.dart';
 import '../portfolio1/components/SocialWidget.dart';
 import 'Colors.dart';
 import 'components/AboutMeWidget.dart';
-import 'components/ClientHappyWidget.dart';
-import 'components/DropMessageWidget.dart';
-import 'components/FunFactsWidget.dart';
-import 'components/IndeedWidget.dart';
 import 'components/IntroductionWidget.dart';
-import 'components/LatestBlogWidget.dart';
-import 'components/LatestWorkWidget.dart';
 import 'components/ServicesWidget.dart';
-import 'components/SkillWidget.dart';
-import 'components/knowledgeWidget.dart';
 
 class Portfolio3Screen extends StatefulWidget {
   const Portfolio3Screen({Key? key}) : super(key: key);
@@ -41,6 +33,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
   }
 
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +74,6 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                     ? portfolio3PrimaryColor
                                     : null)),
                       ),
-                      14.width,
                       TextButton(
                           onPressed: () {
                             setState(() {
@@ -97,12 +89,11 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                   color: index == 1
                                       ? portfolio3PrimaryColor
                                       : null))),
-                      14.width,
                       TextButton(
                           onPressed: () {
                             setState(() {
                               index = 2;
-                              _scrollController.animateTo(2100,
+                              _scrollController.animateTo(2000,
                                   curve: Curves.ease,
                                   duration: const Duration(seconds: 2));
                             });
@@ -113,28 +104,11 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                   color: index == 2
                                       ? portfolio3PrimaryColor
                                       : null))),
-                      14.width,
                       TextButton(
                           onPressed: () {
                             setState(() {
                               index = 3;
-                              _scrollController.animateTo(3900,
-                                  curve: Curves.ease,
-                                  duration: const Duration(seconds: 2));
-                            });
-                          },
-                          child: Text('WORK',
-                              style: boldTextStyle(
-                                  size: 14,
-                                  color: index == 3
-                                      ? portfolio3PrimaryColor
-                                      : null))),
-                      14.width,
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              index = 4;
-                              _scrollController.animateTo(7900,
+                              _scrollController.animateTo(2700,
                                   curve: Curves.ease,
                                   duration: const Duration(seconds: 2));
                             });
@@ -142,7 +116,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           child: Text('CONTACT',
                               style: boldTextStyle(
                                   size: 14,
-                                  color: index == 4
+                                  color: index == 3
                                       ? portfolio3PrimaryColor
                                       : null))),
                     ],
@@ -153,17 +127,17 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
             const IntroductionWidget(),
             AboutMeWidget(),
             ServicesWidget(),
-            SkillWidget(),
-            LatestWorkWidget(),
-            knowledgeWidget(),
-            FunFactsWidget(),
-            LatestBlogWidget(),
-            ClientHappyWidget(),
-            DropMessageWidget(),
-            const Divider(
-              height: 0,
-            ),
-            const IndeedWidget(),
+            // SkillWidget(),
+            // LatestWorkWidget(),
+            // knowledgeWidget(),
+            // FunFactsWidget(),
+            // LatestBlogWidget(),
+            // ClientHappyWidget(),
+            // DropMessageWidget(),
+            // const Divider(
+            //   height: 0,
+            // ),
+            // const IndeedWidget(),
             SocialWidget(),
           ],
         ),

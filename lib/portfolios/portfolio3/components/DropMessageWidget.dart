@@ -73,14 +73,20 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                       decoration: InputDecoration(
                         hintText: 'Name',
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
+                        fillColor: appStore.isDarkModeOn
+                            ? cardBackgroundBlackDark
+                            : Colors.grey.shade100,
                         contentPadding: EdgeInsets.all(18),
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                            borderSide:
+                                BorderSide(color: portfolio3PrimaryColor)),
                       ),
                       keyboardType: TextInputType.name,
-                      onFieldSubmitted: (s) => FocusScope.of(context).requestFocus(emailFocus),
+                      onFieldSubmitted: (s) =>
+                          FocusScope.of(context).requestFocus(emailFocus),
                       textInputAction: TextInputAction.next,
                     ),
                     16.height,
@@ -95,11 +101,17 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
-                        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
+                        fillColor: appStore.isDarkModeOn
+                            ? cardBackgroundBlackDark
+                            : Colors.grey.shade100,
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                            borderSide:
+                                BorderSide(color: portfolio3PrimaryColor)),
                       ),
                       keyboardType: TextInputType.emailAddress,
-                      onFieldSubmitted: (s) => FocusScope.of(context).requestFocus(subjectFocus),
+                      onFieldSubmitted: (s) =>
+                          FocusScope.of(context).requestFocus(subjectFocus),
                       textInputAction: TextInputAction.next,
                     ),
                     16.height,
@@ -112,13 +124,19 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintText: 'Subject',
                         contentPadding: EdgeInsets.all(18),
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
+                        fillColor: appStore.isDarkModeOn
+                            ? cardBackgroundBlackDark
+                            : Colors.grey.shade100,
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                            borderSide:
+                                BorderSide(color: portfolio3PrimaryColor)),
                       ),
                       keyboardType: TextInputType.name,
-                      onFieldSubmitted: (s) => FocusScope.of(context).requestFocus(msgFocus),
+                      onFieldSubmitted: (s) =>
+                          FocusScope.of(context).requestFocus(msgFocus),
                       textInputAction: TextInputAction.next,
                     ),
                     16.height,
@@ -131,11 +149,16 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintText: 'Your Message',
                         alignLabelWithHint: true,
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
+                        fillColor: appStore.isDarkModeOn
+                            ? cardBackgroundBlackDark
+                            : Colors.grey.shade100,
                         contentPadding: EdgeInsets.all(18),
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                            borderSide:
+                                BorderSide(color: portfolio3PrimaryColor)),
                       ),
                       keyboardType: TextInputType.multiline,
                       textInputAction: TextInputAction.done,
@@ -145,11 +168,14 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                     TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                        padding: EdgeInsets.only(top: 16, bottom: 16, left: 32, right: 32),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4)),
+                        padding: EdgeInsets.only(
+                            top: 16, bottom: 16, left: 32, right: 32),
                         primary: portfolio3PrimaryColor,
                       ),
-                      child: Text('SEND', style: boldTextStyle(color: Colors.white, size: 18)),
+                      child: Text('SEND',
+                          style: boldTextStyle(color: Colors.white, size: 18)),
                     ),
                     24.height,
                   ],
@@ -166,23 +192,32 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                     children: [
                       Text('Address:', style: boldTextStyle(size: 18)),
                       Text('Company Inc,', style: primaryTextStyle(size: 14)),
-                      Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
-                      Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
-                      Text('United States of America.', style: primaryTextStyle(size: 14)),
+                      Text('Las vegas street 201,',
+                          style: primaryTextStyle(size: 14)),
+                      Text('Las vegas street 201,',
+                          style: primaryTextStyle(size: 14)),
+                      Text('United States of America.',
+                          style: primaryTextStyle(size: 14)),
                       24.height,
                       Text('Phone:', style: boldTextStyle(size: 18)),
-                      Text('+11-22-55-66-05', style: primaryTextStyle(size: 14)).onTap(() {
+                      Text('+11-22-55-66-05', style: primaryTextStyle(size: 14))
+                          .onTap(() {
                         launch('tel: +11-22-55-66-05');
                       }),
-                      Text('+11-22-55-66-06,', style: primaryTextStyle(size: 14)).onTap(() {
+                      Text('+11-22-55-66-06,',
+                              style: primaryTextStyle(size: 14))
+                          .onTap(() {
                         launch('tel: +11-22-55-66-06');
                       }),
                       24.height,
                       Text('Email:', style: boldTextStyle(size: 18)),
-                      Text('christopher@mail.com', style: primaryTextStyle(size: 14)).onTap(() {
+                      Text('christopher@mail.com',
+                              style: primaryTextStyle(size: 14))
+                          .onTap(() {
                         launch('mailto:christopher@gmail.com');
                       }),
-                      Text('United States of America.', style: primaryTextStyle(size: 14)),
+                      Text('United States of America.',
+                          style: primaryTextStyle(size: 14)),
                       24.height,
                     ],
                   ),

@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:rumah_idamanku/portfolios/portfolio1/Portfolio1Screen.dart';
+import 'package:rumah_idamanku/portfolios/portfolio2/Portfolio2Screen.dart';
+import 'package:rumah_idamanku/portfolios/portfolio3/Portfolio3Screen.dart';
 
 import 'firebase_options.dart';
 import 'locale/Languages.dart';
@@ -118,6 +121,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Portfolio1Screen())),
+                child: const Text('PortFolio 1 ')),
+            ElevatedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Portfolio2Screen())),
+                child: const Text('PortFolio 2 ')),
+            ElevatedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Portfolio3Screen())),
+                child: const Text('PortFolio 3 ')),
             const Text(
               'You have pushed the button this many times:',
             ),

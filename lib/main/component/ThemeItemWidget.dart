@@ -14,7 +14,7 @@ class ThemeItemWidget extends StatefulWidget {
   final int index;
   final ProTheme data;
 
-  ThemeItemWidget(this.index, this.data);
+  const ThemeItemWidget(this.index, this.data);
 
   @override
   _ThemeItemWidgetState createState() => _ThemeItemWidgetState();
@@ -42,7 +42,7 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
   Widget build(BuildContext context) {
     return AnimationConfiguration.staggeredList(
       position: widget.index,
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
       child: FadeInAnimation(
         child: GestureDetector(
           onTap: () {
@@ -64,18 +64,18 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
             }
           },
           child: Container(
-            margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
             child: Row(
               children: <Widget>[
                 Container(
                   width: 80,
                   height: 80,
-                  margin: EdgeInsets.only(right: 12),
-                  padding: EdgeInsets.all(16),
-                  child: Image.asset(icons[widget.index % icons.length],
-                      color: Colors.white),
+                  margin: const EdgeInsets.only(right: 12),
+                  padding: const EdgeInsets.all(16),
                   decoration: boxDecorationDefault(
                       color: colors[widget.index % colors.length]),
+                  child: Image.asset(icons[widget.index % icons.length],
+                      color: Colors.white),
                 ),
                 Expanded(
                   child: Stack(
@@ -84,7 +84,7 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
                       Container(
                         width: context.width(),
                         height: 80,
-                        padding: EdgeInsets.only(left: 16, right: 16),
+                        padding: const EdgeInsets.only(left: 16, right: 16),
                         margin: EdgeInsets.only(right: context.width() / 28),
                         decoration:
                             boxDecorationDefault(color: context.cardColor),
@@ -95,7 +95,7 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('${widget.data.name.validate()}',
+                                Text(widget.data.name.validate(),
                                     style: boldTextStyle(), maxLines: 2),
                                 Text(
                                   widget.data.title_name.validate(),
@@ -108,11 +108,11 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
                             Container(
                               alignment: Alignment.center,
                               height: 25,
-                              margin: EdgeInsets.only(right: 8),
-                              padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                              margin: const EdgeInsets.only(right: 8),
+                              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                               decoration: widget.data.tag.validate().isNotEmpty
                                   ? boxDecorationDefault(color: appDarkRed)
-                                  : BoxDecoration(),
+                                  : const BoxDecoration(),
                               child: text(widget.data.tag.validate(),
                                   fontSize: 14.0, textColor: whiteColor),
                             ),
@@ -122,11 +122,11 @@ class _ThemeItemWidgetState extends State<ThemeItemWidget> {
                       Container(
                         width: 30,
                         height: 30,
-                        child: Icon(Icons.keyboard_arrow_right,
-                            color: Colors.white),
                         decoration: boxDecorationDefault(
                             color: colors[widget.index % colors.length],
                             shape: BoxShape.circle),
+                        child: const Icon(Icons.keyboard_arrow_right,
+                            color: Colors.white),
                       ),
                     ],
                   ),

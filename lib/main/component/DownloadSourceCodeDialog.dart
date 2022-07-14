@@ -9,6 +9,8 @@ import '../utils/AppColors.dart';
 import '../utils/AppConstant.dart';
 
 class DownloadSourceCodeDialog extends StatelessWidget {
+  const DownloadSourceCodeDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -23,7 +25,7 @@ class DownloadSourceCodeDialog extends StatelessWidget {
         ),
         width: MediaQuery.of(context).size.width,
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -34,19 +36,19 @@ class DownloadSourceCodeDialog extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Padding(
-                      padding: EdgeInsets.only(top: 8, right: 16),
+                      padding: const EdgeInsets.only(top: 8, right: 16),
                       child: Icon(Icons.close, color: appStore.iconColor)),
                 ),
               ),
               Image.asset('images/app/app_icon.png', height: 100),
               Text("Download the source code", style: boldTextStyle(size: 20))
                   .fit(),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               Text(
                   "Love ProKit Flutter? Tap on download to buy ProKit Flutter.",
                   style: secondaryTextStyle(size: 16),
                   textAlign: TextAlign.center),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: appColorPrimary,

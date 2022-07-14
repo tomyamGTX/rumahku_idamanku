@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -13,7 +12,7 @@ import 'SubMenuContentComponent.dart';
 class ThemeListWeb extends StatefulWidget {
   final List<ProTheme> mainList;
 
-  ThemeListWeb({required this.mainList});
+  const ThemeListWeb({required this.mainList});
 
   @override
   _ThemeListWebState createState() => _ThemeListWebState();
@@ -60,7 +59,7 @@ class _ThemeListWebState extends State<ThemeListWeb> {
                           color:
                               hovering ? appColorPrimary : context.cardColor),
                       width: 265,
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       //margin: EdgeInsets.only(right: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,14 +70,14 @@ class _ThemeListWebState extends State<ThemeListWeb> {
                               Container(
                                 width: 60,
                                 height: 60,
-                                margin: EdgeInsets.only(right: 12),
-                                padding: EdgeInsets.all(12),
-                                child: Image.asset(icons[index % icons.length],
-                                    color: Colors.white),
+                                margin: const EdgeInsets.only(right: 12),
+                                padding: const EdgeInsets.all(12),
                                 decoration: boxDecorationDefault(
                                   color: webColors[index % webColors.length],
                                   shape: BoxShape.circle,
                                 ),
+                                child: Image.asset(icons[index % icons.length],
+                                    color: Colors.white),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,14 +109,15 @@ class _ThemeListWebState extends State<ThemeListWeb> {
                                   children: [
                                     Container(
                                       alignment: Alignment.centerRight,
-                                      margin: EdgeInsets.only(right: 8),
-                                      padding: EdgeInsets.fromLTRB(8, 2, 8, 2),
+                                      margin: const EdgeInsets.only(right: 8),
+                                      padding:
+                                          const EdgeInsets.fromLTRB(8, 2, 8, 2),
                                       decoration:
                                           data.type.validate().isNotEmpty
                                               ? boxDecoration(
                                                   bgColor: appDarkRed,
                                                   radius: 4)
-                                              : BoxDecoration(),
+                                              : const BoxDecoration(),
                                       child: text(data.type.validate(),
                                           fontSize: 10.0,
                                           textColor: Colors.white),
@@ -126,7 +126,8 @@ class _ThemeListWebState extends State<ThemeListWeb> {
                                     data.isWebSupported.validate()
                                         ? TextIcon(
                                             edgeInsets:
-                                                EdgeInsets.fromLTRB(2, 0, 8, 0),
+                                                const EdgeInsets.fromLTRB(
+                                                    2, 0, 8, 0),
                                             textStyle: boldTextStyle(
                                                 size: 10,
                                                 color: hovering
@@ -136,10 +137,10 @@ class _ThemeListWebState extends State<ThemeListWeb> {
                                             text: "Web Supported",
                                             spacing: 0,
                                           )
-                                        : Offstage(),
+                                        : const Offstage(),
                                   ],
                                 )
-                              : Offstage(),
+                              : const Offstage(),
                         ],
                       ),
                     ),

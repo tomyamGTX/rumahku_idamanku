@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -59,13 +57,13 @@ class _SocialMediaWidgetComponentState
 
   Widget mobileWidget() {
     return PopupMenuButton(
-      child: Icon(Icons.menu, color: Colors.black),
+      child: const Icon(Icons.menu, color: Colors.black),
       // padding: EdgeInsets.zero,
       itemBuilder: (context) {
         List<PopupMenuItem> data = [];
         list.forEach((element) {
           data.add(PopupMenuItem(
-              padding: EdgeInsets.all(0),
+              padding: const EdgeInsets.all(0),
               mouseCursor: MouseCursor.defer,
               child: HoverWidget(
                 builder: (BuildContext context, bool isHovering) {
@@ -76,7 +74,7 @@ class _SocialMediaWidgetComponentState
                         children: [
                           AnimatedContainer(
                             duration: 200.milliseconds,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 shape: BoxShape.circle, color: appColorPrimary),
                             child: SvgPicture.asset(
                               element.icon!,

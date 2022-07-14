@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../main.dart';
@@ -10,7 +9,7 @@ import 'ThemeListWeb.dart';
 class SubMenuContentComponent extends StatelessWidget {
   ProTheme proTheme;
 
-  SubMenuContentComponent({required this.proTheme});
+  SubMenuContentComponent({Key? key, required this.proTheme}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class SubMenuContentComponent extends StatelessWidget {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: ThemeListWeb(mainList: proTheme.sub_kits!),
       ),
     );

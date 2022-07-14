@@ -13,7 +13,8 @@ class AppCategoryComponent extends StatefulWidget {
   final bool? isHover;
   AppTheme appTheme = AppTheme();
 
-  AppCategoryComponent({this.isHover, required this.appTheme});
+  AppCategoryComponent({Key? key, this.isHover, required this.appTheme})
+      : super(key: key);
 
   @override
   _AppCategoryComponentState createState() => _AppCategoryComponentState();

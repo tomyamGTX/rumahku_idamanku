@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../../widgets/web.appbar.dart';
 import '../../utils/DAWidgets.dart';
 import '../../utils/Images.dart';
 import '../Colors.dart';
 
 class IntroductionWidget extends StatefulWidget {
   static String tag = '/IntroductionScreen';
+
+  const IntroductionWidget({Key? key}) : super(key: key);
 
   @override
   IntroductionWidgetState createState() => IntroductionWidgetState();
@@ -30,44 +33,13 @@ class IntroductionWidgetState extends State<IntroductionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: context.width(),
       height: context.height(),
       child: Column(
         children: [
-          Container(
-            height: 75,
-            width: context.width(),
-            decoration: boxDecorationWithShadow(
-                backgroundColor: context.scaffoldBackgroundColor),
-            alignment: Alignment.center,
-            padding: EdgeInsets.only(top: 8, bottom: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Mix',
-                        style: boldTextStyle(
-                            size: 42, color: portfolio3PrimaryColor))
-                    .expand(),
-                Row(
-                  children: [
-                    Text('HOME',
-                        style: boldTextStyle(
-                            size: 14, color: portfolio3PrimaryColor)),
-                    14.width,
-                    Text('ABOUT', style: boldTextStyle(size: 14)),
-                    14.width,
-                    Text('SERVICE', style: boldTextStyle(size: 14)),
-                    14.width,
-                    Text('WORK', style: boldTextStyle(size: 14)),
-                    14.width,
-                    Text('CONTACT', style: boldTextStyle(size: 14)),
-                  ],
-                )
-              ],
-            ).withWidth(context.width() * 0.85),
-          ),
-          Container(
+          const WebAppbar(),
+          SizedBox(
             height: context.height() - 75,
             width: context.width(),
             child: Stack(
@@ -110,31 +82,34 @@ class IntroductionWidgetState extends State<IntroductionWidget> {
                         children: [
                           TextButton(
                             onPressed: () {},
-                            child: Text('MY WORK',
-                                style: boldTextStyle(
-                                    color: Colors.white, size: 18)),
                             style: TextButton.styleFrom(
                               backgroundColor: portfolio3PrimaryColor,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4)),
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   top: 16, bottom: 16, left: 32, right: 32),
                             ),
+                            child: Text('MY WORK',
+                                style: boldTextStyle(
+                                    color: Colors.white, size: 18)),
                           ),
-                          16.width,
+                          const SizedBox(
+                            width: 14,
+                          ),
                           OutlinedButton(
                             onPressed: () {},
-                            child: Text('HIRE ME',
-                                style: boldTextStyle(
-                                    color: portfolio3PrimaryColor, size: 18)),
                             style: OutlinedButton.styleFrom(
                               backgroundColor: Colors.transparent,
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   top: 16, bottom: 16, left: 32, right: 32),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4)),
-                              side: BorderSide(color: portfolio3PrimaryColor),
+                              side: const BorderSide(
+                                  color: portfolio3PrimaryColor),
                             ),
+                            child: Text('HIRE ME',
+                                style: boldTextStyle(
+                                    color: portfolio3PrimaryColor, size: 18)),
                           ),
                         ],
                       ),

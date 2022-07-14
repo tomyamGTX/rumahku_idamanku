@@ -2,13 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-
 import '../../../../main.dart';
 import '../../../main/utils/AppColors.dart';
 import '../Colors.dart';
 
 class IndeedWidget extends StatefulWidget {
   static String tag = '/IndeedWidget';
+
+  const IndeedWidget({Key? key}) : super(key: key);
 
   @override
   IndeedWidgetState createState() => IndeedWidgetState();
@@ -34,12 +35,15 @@ class IndeedWidgetState extends State<IndeedWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: context.width(),
-      padding: EdgeInsets.only(top: 24, bottom: 24),
-      color: appStore.isDarkModeOn ? appBackgroundColorDark : portfolio3BackgroundColor,
+      padding: const EdgeInsets.only(top: 24, bottom: 24),
+      color: appStore.isDarkModeOn
+          ? appBackgroundColorDark
+          : portfolio3BackgroundColor,
       child: Column(
         children: [
           24.height,
-          Text('I\'am available for freelance projects.', style: secondaryTextStyle(size: 18)),
+          Text('I\'am available for freelance projects.',
+              style: secondaryTextStyle(size: 18)),
           16.height,
           Text('Let\'s work together indeed!', style: boldTextStyle(size: 40)),
           24.height,
@@ -49,23 +53,31 @@ class IndeedWidgetState extends State<IndeedWidget> {
               OutlinedButton(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: portfolio3PrimaryColor),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                  padding: EdgeInsets.only(top: 16, bottom: 16, left: 32, right: 32),
+                  side: const BorderSide(color: portfolio3PrimaryColor),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+                  padding: const EdgeInsets.only(
+                      top: 16, bottom: 16, left: 32, right: 32),
                   primary: Colors.transparent,
                 ),
-                child: Text('GET QUOTES', style: boldTextStyle(color: portfolio3PrimaryColor, size: 18)),
+                child: Text('GET QUOTES',
+                    style:
+                        boldTextStyle(color: portfolio3PrimaryColor, size: 18)),
               ),
               16.width,
               OutlinedButton(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: portfolio3PrimaryColor),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                  padding: EdgeInsets.only(top: 16, bottom: 16, left: 32, right: 32),
+                  side: const BorderSide(color: portfolio3PrimaryColor),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+                  padding: const EdgeInsets.only(
+                      top: 16, bottom: 16, left: 32, right: 32),
                   primary: Colors.transparent,
                 ),
-                child: Text('HIRE ME', style: boldTextStyle(color: portfolio3PrimaryColor, size: 18)),
+                child: Text('HIRE ME',
+                    style:
+                        boldTextStyle(color: portfolio3PrimaryColor, size: 18)),
               ),
             ],
           ),

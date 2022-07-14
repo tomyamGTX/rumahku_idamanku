@@ -36,31 +36,40 @@ class SocialWidgetState extends State<SocialWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Entypo.facebook_with_circle, size: 40, color: Colors.white).onTap(() {
-                  launch('https://www.facebook.com');
-                }),
-                16.width,
-                Icon(Entypo.twitter_with_circle, size: 40, color: Colors.white).onTap(() {
-                  launch('https://www.twitter.com');
-                }),
-                16.width,
-                Icon(Entypo.instagram_with_circle, size: 40, color: Colors.white).onTap(() {
-                  launch('https://www.instagram.com');
-                }),
-                16.width,
-                Icon(Entypo.linkedin_with_circle, size: 40, color: Colors.white).onTap(() {
-                  launch('https://www.linkedin.com');
-                }),
-                16.width,
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Entypo.facebook_with_circle,
+                      size: 40, color: Colors.white)
+                  .onTap(() {
+                launch('https://www.facebook.com');
+              }),
+              16.width,
+              const Icon(Entypo.twitter_with_circle,
+                      size: 40, color: Colors.white)
+                  .onTap(() {
+                launch('https://www.twitter.com');
+              }),
+              16.width,
+              const Icon(Entypo.instagram_with_circle,
+                      size: 40, color: Colors.white)
+                  .onTap(() {
+                launch('https://www.instagram.com');
+              }),
+              16.width,
+              const Icon(Entypo.linkedin_with_circle,
+                      size: 40, color: Colors.white)
+                  .onTap(() {
+                launch('https://www.linkedin.com');
+              }),
+              16.width,
+            ],
           ).withWidth(context.width() * 0.8),
-          Divider(height: 50, color: Colors.white24, thickness: 1).withWidth(context.width() * 0.9),
-          Text('© 2020 My Website. All rights reserved | Designed by Iqonic Design', style: primaryTextStyle(color: Colors.white)),
+          const Divider(height: 50, color: Colors.white24, thickness: 1)
+              .withWidth(context.width() * 0.9),
+          Text(
+              '© 2022 My Website. All rights reserved | Designed by Iqonic Design',
+              style: primaryTextStyle(color: Colors.white)),
         ],
       ),
     );

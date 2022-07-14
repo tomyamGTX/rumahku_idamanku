@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../main/utils/AppWidget.dart';
 import '../portfolio3/components/IndeedWidget.dart';
 import 'components/AboutUsScreen.dart';
@@ -10,7 +9,6 @@ import 'components/IntroductionScreen.dart';
 import 'components/ProjectDetailWidget.dart';
 import 'components/ServicesScreen.dart';
 import 'components/TestimonialWidget.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class Portfolio2Screen extends StatefulWidget {
   static String tag = '/Portfolio2Screen';
@@ -46,7 +44,9 @@ class Portfolio2ScreenState extends State<Portfolio2Screen> {
       appBar: appBar(context, 'Portfolio 2'),
       body: Container(
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(bottom: 30,),
+          padding: const EdgeInsets.only(
+            bottom: 30,
+          ),
           child: Column(
             children: [
               IntroductionScreen(),
@@ -56,7 +56,7 @@ class Portfolio2ScreenState extends State<Portfolio2Screen> {
               ProjectDetailWidget(),
               TestimonialWidget(),
               AvailableProjectWidget(),
-              IndeedWidget(),
+              const IndeedWidget(),
             ],
           ),
         ),

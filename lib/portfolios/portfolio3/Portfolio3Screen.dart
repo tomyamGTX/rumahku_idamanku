@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../main/utils/AppWidget.dart';
 import '../portfolio1/components/SocialWidget.dart';
 import 'components/AboutMeWidget.dart';
 import 'components/ClientHappyWidget.dart';
@@ -15,6 +14,8 @@ import 'components/SkillWidget.dart';
 import 'components/knowledgeWidget.dart';
 
 class Portfolio3Screen extends StatefulWidget {
+  const Portfolio3Screen({Key? key}) : super(key: key);
+
   @override
   Portfolio3ScreenState createState() => Portfolio3ScreenState();
 }
@@ -38,30 +39,25 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context, 'Portfolio 3'),
-      body: Container(
-        child: Scrollbar(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                IntroductionWidget(),
-                AboutMeWidget(),
-                ServicesWidget(),
-                SkillWidget(),
-                LatestWorkWidget(),
-                knowledgeWidget(),
-                FunFactsWidget(),
-                LatestBlogWidget(),
-                ClientHappyWidget(),
-                DropMessageWidget(),
-                const Divider(
-                  height: 0,
-                ),
-                IndeedWidget(),
-                SocialWidget(),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const IntroductionWidget(),
+            AboutMeWidget(),
+            ServicesWidget(),
+            SkillWidget(),
+            LatestWorkWidget(),
+            knowledgeWidget(),
+            FunFactsWidget(),
+            LatestBlogWidget(),
+            ClientHappyWidget(),
+            DropMessageWidget(),
+            const Divider(
+              height: 0,
             ),
-          ),
+            const IndeedWidget(),
+            SocialWidget(),
+          ],
         ),
       ),
     );

@@ -88,7 +88,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                   duration: const Duration(seconds: 2));
                             });
                           },
-                          child: Text('HOUSES',
+                          child: Text('HOUSES/LAND',
                               style: boldTextStyle(
                                   size: 14,
                                   color: index == 1
@@ -160,9 +160,10 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                     cursorColor: portfolio3PrimaryColor,
                                     decoration: const InputDecoration(
                                         border: InputBorder.none,
-                                        hintText: 'Search your house here',
+                                        hintText: 'Search house/land here',
                                         suffixIcon: Icon(
                                           Icons.search,
+                                          size: 32,
                                           color: portfolio3PrimaryColor,
                                         )),
                                   ),

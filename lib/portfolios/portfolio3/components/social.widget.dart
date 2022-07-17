@@ -67,6 +67,11 @@ class SocialWidgetState extends State<SocialWidget> {
                     'https://www.linkedin.com/in/mohamad-hakimi-bin-mohamad-noor-11510720b/');
               }),
               16.width,
+              Icon(FontAwesome.youtube, size: 30, color: Colors.white)
+                  .onTap(() {
+                launch(
+                    'https://www.youtube.com/channel/UC5yL4ttlwmmSYc78fpT7eEw');
+              }),
             ],
           ).withWidth(context.width() * 0.8),
           const Divider(height: 50, color: Colors.white24, thickness: 1)

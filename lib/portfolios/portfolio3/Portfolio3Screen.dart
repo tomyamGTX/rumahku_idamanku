@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
-import 'package:rumah_idamanku/portfolios/portfolio3/components/SocialWidget.dart';
 import 'package:rumah_idamanku/portfolios/providers/house.provider.dart';
 
 import '../houses/house.tile.dart';
@@ -9,6 +8,7 @@ import '../houses/pagination.view.dart';
 import '../utils/DAWidgets.dart';
 import '../utils/Images.dart';
 import 'Colors.dart';
+import 'components/social.widget.dart';
 
 class Portfolio3Screen extends StatefulWidget {
   const Portfolio3Screen({Key? key}) : super(key: key);

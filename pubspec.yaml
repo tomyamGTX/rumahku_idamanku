@@ -31,8 +31,10 @@ dependencies:
     sdk: flutter
   firebase_auth:
   firebase_core:
+  cloud_firestore:
   firebase_storage:
-  flutter_firebase_firestore:
+  paginate_firestore:
+  provider:
   nb_utils:
   flutter_vector_icons:
   google_mobile_ads:

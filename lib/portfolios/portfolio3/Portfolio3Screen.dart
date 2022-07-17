@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:provider/provider.dart';
+import 'package:rumah_idamanku/portfolios/providers/house.provider.dart';
 
+import '../houses/house.tile.dart';
+import '../houses/pagination.view.dart';
 import '../portfolio1/components/SocialWidget.dart';
+import '../utils/DAWidgets.dart';
+import '../utils/Images.dart';
 import 'Colors.dart';
-import 'components/AboutMeWidget.dart';
-import 'components/IntroductionWidget.dart';
-import 'components/ServicesWidget.dart';
 
 class Portfolio3Screen extends StatefulWidget {
   const Portfolio3Screen({Key? key}) : super(key: key);
@@ -16,6 +19,8 @@ class Portfolio3Screen extends StatefulWidget {
 
 class Portfolio3ScreenState extends State<Portfolio3Screen> {
   final _scrollController = ScrollController();
+
+  var _search = '';
 
   @override
   void initState() {
@@ -52,7 +57,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Rumah Idamanku',
+                  Text('Website name here',
                           style: boldTextStyle(
                               size: 42, color: portfolio3PrimaryColor))
                       .expand(),
@@ -67,7 +72,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                 duration: const Duration(seconds: 2));
                           });
                         },
-                        child: Text('HOME',
+                        child: Text('SEARCH',
                             style: boldTextStyle(
                                 size: 14,
                                 color: index == 0
@@ -78,12 +83,12 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           onPressed: () {
                             setState(() {
                               index = 1;
-                              _scrollController.animateTo(1000,
+                              _scrollController.animateTo(400,
                                   curve: Curves.ease,
                                   duration: const Duration(seconds: 2));
                             });
                           },
-                          child: Text('ABOUT',
+                          child: Text('HOUSES',
                               style: boldTextStyle(
                                   size: 14,
                                   color: index == 1
@@ -93,21 +98,6 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           onPressed: () {
                             setState(() {
                               index = 2;
-                              _scrollController.animateTo(2000,
-                                  curve: Curves.ease,
-                                  duration: const Duration(seconds: 2));
-                            });
-                          },
-                          child: Text('SERVICE',
-                              style: boldTextStyle(
-                                  size: 14,
-                                  color: index == 2
-                                      ? portfolio3PrimaryColor
-                                      : null))),
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              index = 3;
                               _scrollController.animateTo(2700,
                                   curve: Curves.ease,
                                   duration: const Duration(seconds: 2));
@@ -116,7 +106,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           child: Text('CONTACT',
                               style: boldTextStyle(
                                   size: 14,
-                                  color: index == 3
+                                  color: index == 2
                                       ? portfolio3PrimaryColor
                                       : null))),
                     ],
@@ -124,24 +114,135 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                 ],
               ).withWidth(context.width() * 0.85),
             ),
-            const IntroductionWidget(),
-            AboutMeWidget(),
-            ServicesWidget(),
-            // SkillWidget(),
-            // LatestWorkWidget(),
-            // knowledgeWidget(),
-            // FunFactsWidget(),
-            // LatestBlogWidget(),
-            // ClientHappyWidget(),
-            // DropMessageWidget(),
-            // const Divider(
-            //   height: 0,
-            // ),
-            // const IndeedWidget(),
+            SizedBox(
+              width: context.width(),
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: SizedBox(
+                height: context.height() - 75,
+                width: context.width(),
+                child: Stack(
+                  children: [
+                    commonCachedNetworkImage(
+                      p3IntoImg,
+                      height: context.height() - 75,
+                      width: context.width(),
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      height: context.height() - 75,
+                      width: context.width(),
+                      color: Colors.black.withOpacity(0.5),
+                    ),
+                    Container(
+                      width: context.width() * 0.85,
+                      alignment: Alignment.center,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Slogan here',
+                              style: primaryTextStyle(size: 52, color: white)),
+                          32.height,
+                          Center(
+                            child: Container(
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                decoration: BoxDecoration(
+                                    color: portfolio3BackgroundColor,
+                                    borderRadius: BorderRadius.circular(32)),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 8.0, horizontal: 32),
+                                  child: TextFormField(
+                                    onChanged: (e) {
+                                      setState(() {});
+                                      _search = e;
+                                    },
+                                    cursorColor: portfolio3PrimaryColor,
+                                    decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Search your house here',
+                                        suffixIcon: Icon(
+                                          Icons.search,
+                                          color: portfolio3PrimaryColor,
+                                        )),
+                                  ),
+                                )),
+                          ),
+                          32.height,
+                        ],
+                      ),
+                    ).paddingOnly(left: 32)
+                  ],
+                ),
+              ),
+            ),
+            _search == ''
+                ? const PaginationView()
+                : Consumer<HouseProvider>(builder: (context, house, _) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(32.0),
+                          child: Text(
+                            'List of Houses',
+                            style: boldTextStyle(
+                              size: 30,
+                              color: black,
+                              decorationColor: portfolio3PrimaryColor,
+                              textDecorationStyle: TextDecorationStyle.solid,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.7,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8.0, horizontal: 32),
+                            child: GridView.builder(
+                              itemCount: house.list.length,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                childAspectRatio: getRatio(),
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 5.0,
+                                mainAxisSpacing: 5.0,
+                              ),
+                              itemBuilder: (BuildContext context, int index) {
+                                var data = house.list;
+                                String name = data[index]['name'];
+                                if (name.contains(_search)) {
+                                  return HouseTile(
+                                      url: data[index]['image_url'],
+                                      title: data[index]['name'],
+                                      price:
+                                          'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}');
+                                } else {
+                                  return Container();
+                                }
+                              },
+                            ),
+                          ),
+                        )
+                      ],
+                    );
+                  }),
             SocialWidget(),
           ],
         ),
       ),
     );
+  }
+
+  getRatio() {
+    if (MediaQuery.of(context).size.width > 1400) {
+      return 1.9;
+    }
+    if (MediaQuery.of(context).size.width > 1000) {
+      return 1;
+    } else {
+      return 0.9;
+    }
   }
 }

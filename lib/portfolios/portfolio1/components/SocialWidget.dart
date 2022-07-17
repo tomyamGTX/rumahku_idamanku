@@ -42,25 +42,29 @@ class SocialWidgetState extends State<SocialWidget> {
               const Icon(Entypo.facebook_with_circle,
                       size: 40, color: Colors.white)
                   .onTap(() {
-                launch('https://www.facebook.com');
+                launch('https://www.facebook.com/kimi.ezflutter');
               }),
               16.width,
-              const Icon(Entypo.twitter_with_circle,
-                      size: 40, color: Colors.white)
-                  .onTap(() {
-                launch('https://www.twitter.com');
-              }),
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.tiktok_rounded,
+                        size: 24, color: Colors.black)
+                    .onTap(() {
+                  launch('https://www.tiktok.com/@hakimimdnoor');
+                }),
+              ),
               16.width,
               const Icon(Entypo.instagram_with_circle,
                       size: 40, color: Colors.white)
                   .onTap(() {
-                launch('https://www.instagram.com');
+                launch('https://www.instagram.com/kimi_mdnoor/');
               }),
               16.width,
               const Icon(Entypo.linkedin_with_circle,
                       size: 40, color: Colors.white)
                   .onTap(() {
-                launch('https://www.linkedin.com');
+                launch(
+                    'https://www.linkedin.com/in/mohamad-hakimi-bin-mohamad-noor-11510720b/');
               }),
               16.width,
             ],
@@ -68,7 +72,7 @@ class SocialWidgetState extends State<SocialWidget> {
           const Divider(height: 50, color: Colors.white24, thickness: 1)
               .withWidth(context.width() * 0.9),
           Text(
-              '© 2022 My Website. All rights reserved | Designed by Iqonic Design',
+              '© 2022 My Website. All rights reserved | Designed by Hakimi Mdnoor',
               style: primaryTextStyle(color: Colors.white)),
         ],
       ),

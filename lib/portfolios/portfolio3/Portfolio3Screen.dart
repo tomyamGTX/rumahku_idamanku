@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:rumah_idamanku/portfolios/portfolio3/components/SocialWidget.dart';
 import 'package:rumah_idamanku/portfolios/providers/house.provider.dart';
 
 import '../houses/house.tile.dart';
 import '../houses/pagination.view.dart';
-import '../portfolio1/components/SocialWidget.dart';
 import '../utils/DAWidgets.dart';
 import '../utils/Images.dart';
 import 'Colors.dart';
@@ -142,6 +142,15 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                     onChanged: (e) {
                                       setState(() {});
                                       _search = e;
+                                      if (e.length > 2) {
+                                        Provider.of<HouseProvider>(context,
+                                                listen: false)
+                                            .filterList(_search);
+                                      } else {
+                                        Provider.of<HouseProvider>(context,
+                                                listen: false)
+                                            .resetList();
+                                      }
                                     },
                                     cursorColor: portfolio3PrimaryColor,
                                     decoration: const InputDecoration(
@@ -198,16 +207,12 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                               ),
                               itemBuilder: (BuildContext context, int index) {
                                 var data = house.list;
-                                String name = data[index]['name'];
-                                if (name.contains(_search)) {
-                                  return HouseTile(
-                                      url: data[index]['image_url'],
-                                      title: data[index]['name'],
-                                      price:
-                                          'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}');
-                                } else {
-                                  return Container();
-                                }
+
+                                return HouseTile(
+                                    url: data[index]['image_url'],
+                                    title: data[index]['name'],
+                                    price:
+                                        'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}');
                               },
                             ),
                           ),

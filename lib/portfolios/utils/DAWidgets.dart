@@ -61,7 +61,7 @@ Widget placeHolderWidget(
     BoxFit? fit,
     AlignmentGeometry? alignment,
     double? radius}) {
-  return Image.asset('images/dating/placeholder.jpg',
+  return Image.asset('images/newsBlog/nb_walk2.jpg',
           height: height,
           width: width,
           fit: fit ?? BoxFit.cover,

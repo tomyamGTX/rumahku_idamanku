@@ -1,7 +1,5 @@
 import 'package:nb_utils/nb_utils.dart';
 
-import '../../portfolios/portfolio1/Portfolio1Screen.dart';
-import '../../portfolios/portfolio2/Portfolio2Screen.dart';
 import '../../portfolios/portfolio3/Portfolio3Screen.dart';
 import '../model/AppModel.dart';
 
@@ -3012,20 +3010,20 @@ ProTheme getWebApps() {
 List<ProTheme> getPortfolioSites() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(
-      name: 'Portfolio 1',
-      tag: 'New',
-      show_cover: false,
-      widget: Portfolio1Screen(),
-      darkThemeSupported: true,
-      isWebSupported: true));
-  list.add(ProTheme(
-      name: 'Portfolio 2',
-      tag: 'New',
-      show_cover: false,
-      widget: Portfolio2Screen(),
-      darkThemeSupported: true,
-      isWebSupported: true));
+  // list.add(ProTheme(
+  //     name: 'Portfolio 1',
+  //     tag: 'New',
+  //     show_cover: false,
+  //     widget: Portfolio1Screen(),
+  //     darkThemeSupported: true,
+  //     isWebSupported: true));
+  // list.add(ProTheme(
+  //     name: 'Portfolio 2',
+  //     tag: 'New',
+  //     show_cover: false,
+  //     widget: Portfolio2Screen(),
+  //     darkThemeSupported: true,
+  //     isWebSupported: true));
   list.add(ProTheme(
       name: 'Portfolio 3',
       tag: 'New',

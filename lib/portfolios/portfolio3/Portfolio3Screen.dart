@@ -64,22 +64,6 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                   Row(
                     children: [
                       TextButton(
-                        onPressed: () {
-                          setState(() {
-                            index = 0;
-                            _scrollController.animateTo(0,
-                                curve: Curves.ease,
-                                duration: const Duration(seconds: 2));
-                          });
-                        },
-                        child: Text('SEARCH',
-                            style: boldTextStyle(
-                                size: 14,
-                                color: index == 0
-                                    ? portfolio3PrimaryColor
-                                    : null)),
-                      ),
-                      TextButton(
                           onPressed: () {
                             setState(() {
                               index = 1;
@@ -116,7 +100,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
             ),
             SizedBox(
               width: context.width(),
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: MediaQuery.of(context).size.height * 0.45,
               child: SizedBox(
                 height: context.height() - 75,
                 width: context.width(),
@@ -145,7 +129,9 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           32.height,
                           Center(
                             child: Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
+                                width: MediaQuery.of(context).size.width < 600
+                                    ? MediaQuery.of(context).size.width * 0.7
+                                    : MediaQuery.of(context).size.width * 0.5,
                                 decoration: BoxDecoration(
                                     color: portfolio3BackgroundColor,
                                     borderRadius: BorderRadius.circular(32)),
@@ -206,7 +192,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
                                 childAspectRatio: getRatio(),
-                                crossAxisCount: 3,
+                                crossAxisCount: getWidth(),
                                 crossAxisSpacing: 5.0,
                                 mainAxisSpacing: 5.0,
                               ),
@@ -238,12 +224,33 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
 
   getRatio() {
     if (MediaQuery.of(context).size.width > 1400) {
-      return 1.9;
-    }
-    if (MediaQuery.of(context).size.width > 1000) {
+      return 1.6;
+    } else if (MediaQuery.of(context).size.width > 1200) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 1000) {
       return 1;
+    } else if (MediaQuery.of(context).size.width > 800) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 600) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 400) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 200) {
+      return 1.1;
     } else {
-      return 0.9;
+      return 1.5;
+    }
+  }
+
+  getWidth() {
+    if (MediaQuery.of(context).size.width < 600) {
+      return 1;
+    } else if (MediaQuery.of(context).size.width < 800) {
+      return 2;
+    } else if (MediaQuery.of(context).size.width < 1000) {
+      return 2;
+    } else {
+      return 3;
     }
   }
 }

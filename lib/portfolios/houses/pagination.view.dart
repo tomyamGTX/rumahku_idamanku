@@ -37,12 +37,12 @@ class _PaginationViewState extends State<PaginationView> {
             height: MediaQuery.of(context).size.height * 0.7,
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 32),
+                  const EdgeInsets.symmetric(vertical: 7.0, horizontal: 32),
               child: GridView.builder(
                 itemCount: house.list.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: getRatio(),
-                  crossAxisCount: 3,
+                  crossAxisCount: getWidth(),
                   crossAxisSpacing: 5.0,
                   mainAxisSpacing: 5.0,
                 ),
@@ -64,12 +64,33 @@ class _PaginationViewState extends State<PaginationView> {
 
   getRatio() {
     if (MediaQuery.of(context).size.width > 1400) {
-      return 1.9;
-    }
-    if (MediaQuery.of(context).size.width > 1000) {
+      return 1.6;
+    } else if (MediaQuery.of(context).size.width > 1200) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 1000) {
       return 1;
+    } else if (MediaQuery.of(context).size.width > 800) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 600) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 400) {
+      return 1.2;
+    } else if (MediaQuery.of(context).size.width > 200) {
+      return 1.1;
     } else {
-      return 0.9;
+      return 1.5;
+    }
+  }
+
+  getWidth() {
+    if (MediaQuery.of(context).size.width < 600) {
+      return 1;
+    } else if (MediaQuery.of(context).size.width < 800) {
+      return 2;
+    } else if (MediaQuery.of(context).size.width < 1000) {
+      return 2;
+    } else {
+      return 3;
     }
   }
 }

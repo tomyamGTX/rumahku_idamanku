@@ -73,6 +73,7 @@ class SocialWidgetState extends State<SocialWidget> {
               .withWidth(context.width() * 0.9),
           Text(
               '© 2022 My Website. All rights reserved | Designed by Hakimi Mdnoor',
+              textAlign: TextAlign.center,
               style: primaryTextStyle(color: Colors.white)),
         ],
       ),

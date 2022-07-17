@@ -72,33 +72,13 @@ flutter:
   uses-material-design: true
   assets:
     - images/
-    - images/integrations/img/
-    - images/integrations/icons/
-    - images/integrations/
-    - images/LikeButton/image/
     - assets/defaultTheme/
     - assets/shophop_data/
     - assets/integrations/
     - assets/medium/
     - assets/integrations/lang/
-    - images/medium/mtopics/
-    - images/muvi/icons/
-    - images/muvi/images/
-    - images/qibus/
-    - images/pricingPlans/
     - images/newsBlog/
-    - images/medium/
-    - images/LikeButton/
-    - images/mediLab/images/
-    - images/orapay/
     - assets/meadium_data/
-    - images/mediLab/
-    - images/quiz/
-    - images/muvi/
-    - images/learner/
-    - images/hairSalon/
-    - images/mpmusic/
-    - images/grocery/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

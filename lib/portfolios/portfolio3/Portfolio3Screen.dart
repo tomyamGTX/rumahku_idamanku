@@ -141,7 +141,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                   child: TextFormField(
                                     onChanged: (e) {
                                       setState(() {});
-                                      _search = e;
+                                      _search = e.toLowerCase();
                                       if (e.length > 2) {
                                         Provider.of<HouseProvider>(context,
                                                 listen: false)
@@ -192,7 +192,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                           ),
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.7,
+                          height: context.height(),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 8.0, horizontal: 32),
@@ -209,10 +209,14 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
                                 var data = house.list;
 
                                 return HouseTile(
-                                    url: data[index]['image_url'],
-                                    title: data[index]['name'],
-                                    price:
-                                        'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}');
+                                  data: data[index],
+                                  url: data[index]['image_url'],
+                                  title: data[index]['name'],
+                                  price:
+                                      'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}',
+                                  location: data[index]['location'],
+                                  type: data[index]['type'],
+                                );
                               },
                             ),
                           ),
@@ -229,19 +233,19 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
 
   getRatio() {
     if (MediaQuery.of(context).size.width > 1400) {
-      return 1.6;
+      return 1.4;
     } else if (MediaQuery.of(context).size.width > 1200) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 1000) {
-      return 1;
-    } else if (MediaQuery.of(context).size.width > 800) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 600) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 400) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 200) {
       return 1.1;
+    } else if (MediaQuery.of(context).size.width > 1000) {
+      return 0.9;
+    } else if (MediaQuery.of(context).size.width > 800) {
+      return 1.1;
+    } else if (MediaQuery.of(context).size.width > 600) {
+      return 0.85;
+    } else if (MediaQuery.of(context).size.width > 400) {
+      return 0.85;
+    } else if (MediaQuery.of(context).size.width > 200) {
+      return 0.9;
     } else {
       return 1.5;
     }

@@ -34,7 +34,7 @@ class _PaginationViewState extends State<PaginationView> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: context.height(),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 7.0, horizontal: 32),
@@ -49,10 +49,14 @@ class _PaginationViewState extends State<PaginationView> {
                 itemBuilder: (BuildContext context, int index) {
                   var data = house.list;
                   return HouseTile(
-                      url: data[index]['image_url'],
-                      title: data[index]['name'],
-                      price:
-                          'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}');
+                    data: data[index],
+                    url: data[index]['image_url'],
+                    title: data[index]['name'],
+                    price:
+                        'RM ${data[index]['min_price']} - RM ${data[index]['max_price']}',
+                    location: data[index]['location'],
+                    type: data[index]['type'],
+                  );
                 },
               ),
             ),
@@ -64,19 +68,19 @@ class _PaginationViewState extends State<PaginationView> {
 
   getRatio() {
     if (MediaQuery.of(context).size.width > 1400) {
-      return 1.6;
+      return 1.4;
     } else if (MediaQuery.of(context).size.width > 1200) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 1000) {
-      return 1;
-    } else if (MediaQuery.of(context).size.width > 800) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 600) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 400) {
-      return 1.2;
-    } else if (MediaQuery.of(context).size.width > 200) {
       return 1.1;
+    } else if (MediaQuery.of(context).size.width > 1000) {
+      return 0.9;
+    } else if (MediaQuery.of(context).size.width > 800) {
+      return 1;
+    } else if (MediaQuery.of(context).size.width > 600) {
+      return 0.85;
+    } else if (MediaQuery.of(context).size.width > 400) {
+      return 0.85;
+    } else if (MediaQuery.of(context).size.width > 200) {
+      return 0.8;
     } else {
       return 1.5;
     }

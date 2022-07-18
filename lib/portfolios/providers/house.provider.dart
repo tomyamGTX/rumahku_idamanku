@@ -22,7 +22,7 @@ class HouseProvider extends ChangeNotifier {
   void filterList(String search) {
     List filter = [];
     list.forEach((element) {
-      if (element['name'].contains(search)) {
+      if (element['name'].toLowerCase().contains(search.toLowerCase())) {
         filter.add(element);
       }
     });

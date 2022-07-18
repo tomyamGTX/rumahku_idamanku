@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
@@ -28,7 +30,17 @@ class _DetailHouseState extends State<DetailHouse> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final link = WhatsAppUnilink(
+                        phoneNumber: '+60-136595741',
+                        text:
+                            "Hey! I'm interested in a ${widget.data['name']}, located in ${widget.data['location']} with a price range of RM${widget.data['min_price']} - RM${widget.data['max_price']}. Can you explain in detail about this house/land?",
+                      );
+                      Share.share(
+                        '${widget.data['image_url']}\n\nCheck out this ${widget.data['name']} located in ${widget.data['location']} with a price range of RM${widget.data['min_price']} - RM${widget.data['max_price']}. Contact me for more info.\n\n$link',
+                        subject: 'House/Land',
+                      );
+                    },
                     icon: const Icon(
                       Icons.share,
                       size: 30,

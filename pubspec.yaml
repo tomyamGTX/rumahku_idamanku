@@ -48,6 +48,7 @@ dependencies:
   flutter_staggered_animations:
   clippy_flutter:
   whatsapp_unilink: ^2.0.1+1
+  share_plus:
 
 
   # The following adds the Cupertino Icons font to your application.
